@@ -34,14 +34,16 @@ public class VeiculosDAO {
 		}
 	}
 	
-	public LinkedList<veiculos> procurarnome(String nome) {
-		String sql = "select * from veiculos where nome like ?";
-		System.out.print("aqui");
+	public LinkedList<veiculos> procurarnome(String nome, String campo) {
+		String sql = "select * from veiculos where "+ campo + " like ?";
+		
 				
 		try {
 			LinkedList<veiculos> listav = new LinkedList<veiculos>();
 			PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(sql);
-			stmt.setString(1, '%' + nome + '%');
+			stmt.setString(1, campo);
+			
+			stmt.setString(2, "%" + nome+ "%");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {		
 				System.out.print("aqui2");

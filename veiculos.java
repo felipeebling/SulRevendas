@@ -22,11 +22,11 @@ public class veiculos {
 	}
 	@Override
 	public String toString() {
-		return "\nid: " + id + ""
-				+ "\nnome: " + nome + ""
+		return "\nid: " + id  + ""
+				+ "\nnome: "  + nome + ""
 				+ "\nmarca: " + marca + ""
 				+ "\nmotor: " + motor + ""
-				+ "\nano: " + ano +""
+				+ "\nano: "   + ano +""
 				+ "\nvalor: " + valor + ""
 				+ "\nkmatual: " + kmatual;
 	}

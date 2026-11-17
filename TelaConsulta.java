@@ -50,7 +50,6 @@ public class TelaConsulta extends JPanel {
 		
 		for (veiculos v : lista) {
 			retorno += v.toString();
-			
 			retorno += "\n";
 			
 		}
@@ -59,6 +58,7 @@ public class TelaConsulta extends JPanel {
 		
 		
 	}
+	
 	private void consultar() {
 		String acao = opcoes.getSelectedItem().toString();
 		String valo = valor.getText();
@@ -70,7 +70,13 @@ public class TelaConsulta extends JPanel {
 		
 		switch(acao) {
 		case "Nome" :
-				texto.setText(printarLista(v.procurarnome(valo) ) );
+				texto.setText(printarLista( v.procurarnome(valo,"nome") ) );
+				break;
+		case "Marca" :
+			texto.setText(printarLista( v.procurarnome(valo,"marca") ) );
+			 break;
+				
+		
 			
 		
 		
